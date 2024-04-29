@@ -13,15 +13,7 @@ namespace wcfRESTful
     public partial class ExchangeRates
     {
         private YappeEntities yappeEntities = new YappeEntities();
-        [DataContract]
-        public class JsonResponse<T>
-        {
-            [DataMember]
-            public string Message { get; set; }
-
-            [DataMember]
-            public T Data { get; set; }
-        }
+        
         [DataContract]
         public class ExchangeRatesB
         {
@@ -44,16 +36,6 @@ namespace wcfRESTful
             [DataMember]
             public decimal Rate { get; set; }
             
-        }
-
-        [DataContract]
-        public class Login
-        {
-            [DataMember]
-            public int username { get; set; }
-            [DataMember]
-            public decimal password { get; set; }
-
         }
 
 

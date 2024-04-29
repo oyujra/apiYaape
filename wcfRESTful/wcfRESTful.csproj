@@ -134,10 +134,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExchangeRates.cs" />
-    <Compile Include="Inspector\JwtAuthenticationBehavior.cs" />
-    <Compile Include="Inspector\JwtAuthenticationInspector.cs" />
+    <Compile Include="Inspector\TokenValidationBehaviorAttribute.cs" />
+    <Compile Include="Inspector\TokenValidationInspector.cs" />
     <Compile Include="IServicioREST.cs" />
-    <Compile Include="JwtProvider.cs" />
     <Compile Include="Model\DBYappe.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -161,6 +160,7 @@
     <Compile Include="ServicioREST.svc.cs">
       <DependentUpon>ServicioREST.svc</DependentUpon>
     </Compile>
+    <Compile Include="TokenGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -211,7 +211,7 @@
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />

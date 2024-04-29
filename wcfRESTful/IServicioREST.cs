@@ -46,21 +46,21 @@ namespace wcfRESTful
 
         [OperationContract]
         [WebGet(ResponseFormat = WebMessageFormat.Json, UriTemplate = "ExchangeRates/")]
-        JsonResponse<List<Model.ExchangeRates>> ListaExchangeRates();
+        List<Model.ExchangeRates> ListaExchangeRates();
 
         [OperationContract]
         [WebInvoke(Method = "POST",
                    RequestFormat = WebMessageFormat.Json,
                    ResponseFormat = WebMessageFormat.Json,
                    UriTemplate = "ExchangeRates/")]
-        JsonResponse<Model.ExchangeRates> InsertExchangeRate(ExchangeRatesB exchangeRate);
+        Model.ExchangeRates InsertExchangeRate(ExchangeRatesB exchangeRate);
 
         [OperationContract]
         [WebInvoke(Method = "PUT",
                    RequestFormat = WebMessageFormat.Json,
                    ResponseFormat = WebMessageFormat.Json,
                    UriTemplate = "ExchangeRates/")]
-        JsonResponse<Model.ExchangeRates> UpdateExchangeRate(ExchangeRatesC exchangeRatesC);
+        Model.ExchangeRates UpdateExchangeRate(ExchangeRatesC exchangeRatesC);
 
         [OperationContract]
         [WebInvoke(Method = "DELETE",
@@ -68,14 +68,12 @@ namespace wcfRESTful
                    UriTemplate = "ExchangeRates/{id}")]
         void DeleteExchangeRate(string id);
 
-
         [OperationContract]
-        [WebInvoke(Method = "POST",
+        [WebInvoke(Method = "GET",
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json,
-           UriTemplate = "ExchangeRates/Login")]
-        string Login(Login login);
-
-
+           UriTemplate = "GenerateToken/")]
+        string GenerateToken();
+        
     }
 }
